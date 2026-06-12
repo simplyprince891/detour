@@ -51,17 +51,17 @@ export default function Hero() {
       tag: "News",
     },
     {
-      to: "/about",
-      title: "Detour Lab",
+      to: "/results",
+      title: "Live Scores",
       description:
-        "Why we built this platform, our simple code philosophy, and how it all works.",
+        "View real-time results, fixture logs, and past game scores.",
       icon: (
-        <Heart
+        <Zap
           className="text-zinc-400 group-hover:text-primary transition-colors"
           size={18}
         />
       ),
-      tag: "About Us",
+      tag: "Results",
     },
   ];
 

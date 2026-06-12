@@ -24,9 +24,6 @@ import MoviesHome from "./pages/MoviesHome";
 import MovieDetails from "./pages/MovieDetails";
 import Watchlist from "./pages/Watchlist";
 
-// Detour
-import DetourHub from "./pages/DetourHub";
-
 //blog
 import NewsLanding from "./pages/NewsLanding";
 import BlogDetails from "./pages/BlogDetails";
@@ -68,8 +65,7 @@ const router = createBrowserRouter(
         element={<MovieDetails />}
       />
 
-      {/* SportGPT */}
-      <Route path="/about" element={<DetourHub />} />
+
 
       {/* Catch-all */}
       <Route path="*" element={<NotFound />} />

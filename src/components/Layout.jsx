@@ -8,7 +8,6 @@ const Layout = () => {
     { path: "/matches", icon: <Trophy size={20} />, label: "Live Now" },
     { path: "/movies", icon: <Film size={20} />, label: "Highlights" },
     { path: "/blogs", icon: <BookOpen size={20} />, label: "News" },
-    { path: "/about", icon: <MessageSquare size={20} />, label: "Detour Lab" },
   ];
 
   return (
