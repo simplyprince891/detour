@@ -150,7 +150,7 @@ export default function Hero() {
           </Link>
 
           <a
-            href="https://razorsports-backend.vercel.app/detour.apk"
+            href="/detour.apk"
             className="group flex items-center justify-center gap-2.5 font-mono text-[10px] text-zinc-500 hover:text-zinc-300 transition-colors uppercase tracking-widest w-full sm:w-auto"
           >
             <Download
