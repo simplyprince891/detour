@@ -24,18 +24,6 @@ import MoviesHome from "./pages/MoviesHome";
 import MovieDetails from "./pages/MovieDetails";
 import Watchlist from "./pages/Watchlist";
 
-//blog
-import NewsLanding from "./pages/NewsLanding";
-import BlogDetails from "./pages/BlogDetails";
-// Author Auth
-import AuthorLogin from "./pages/AuthorLogin";
-import AuthorRegister from "./pages/AuthorRegister";
-import AuthorProfileEdit from "./pages/AuthorProfileEdit";
-import AuthorDashboard from "./pages/AuthorDashboard";
-import NewBlog from "./pages/NewBlog";
-import EditBlog from "./pages/EditBlog";
-import AuthorProfile from "./pages/AuthorProfile";
-
 // Not Found
 import NotFound from "./pages/NotFound";
 
@@ -65,27 +53,8 @@ const router = createBrowserRouter(
         element={<MovieDetails />}
       />
 
-
-
       {/* Catch-all */}
       <Route path="*" element={<NotFound />} />
-
-      {/* blogs */}
-      <Route path="/blogs" element={<NewsLanding />} />
-      <Route path="/blogs/:id" element={<BlogDetails />} />
-      <Route path="/blogs/new" element={<NewBlog />} />
-      <Route path="/blogs/:id/edit" element={<EditBlog />} />
-
-      {/* Author Auth */}
-      <Route path="/authors/login" element={<AuthorLogin />} />
-      <Route path="/authors/register" element={<AuthorRegister />} />
-      <Route path="/authors/edit/:id" element={<AuthorProfileEdit />} />
-      <Route path="/authors/:id" element={<AuthorProfile />} />
-
-      {/* Public author profile */}
-      <Route path="/authors/public/:id" element={<AuthorProfile />} />
-
-      <Route path="/authors/dashboard" element={<AuthorDashboard />} />
     </Route>
   )
 );

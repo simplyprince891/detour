@@ -38,19 +38,6 @@ export default function Hero() {
 
   const secondaryBento = [
     {
-      to: "/blogs",
-      title: "Latest News",
-      description:
-        "Read helpful guides, development updates, and sports analysis from the team.",
-      icon: (
-        <Newspaper
-          className="text-zinc-400 group-hover:text-primary transition-colors"
-          size={18}
-        />
-      ),
-      tag: "News",
-    },
-    {
       to: "/results",
       title: "Live Scores",
       description:
@@ -124,13 +111,13 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Secondary Cards: Blogs and About Us */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Secondary Cards: Live Scores */}
+          <div className="w-full">
             {secondaryBento.map((item, index) => (
               <Link
                 key={index}
                 to={item.to}
-                className="group flex items-center justify-between p-5 rounded-2xl border border-zinc-800/80/80 bg-card/60 hover:bg-card hover:border-zinc-700 transition-all duration-300 backdrop-blur-sm shadow-[0_0_12px_rgba(30,144,255,0.02)]"
+                className="group flex items-center justify-between p-5 rounded-2xl border border-zinc-800/80 bg-card/60 hover:bg-card hover:border-zinc-700 transition-all duration-300 backdrop-blur-sm shadow-[0_0_12px_rgba(30,144,255,0.02)]"
               >
                 <div className="flex items-center gap-4 min-w-0">
                   <div className="p-2 bg-card/40 border border-zinc-800/80 rounded-2xl group-hover:border-zinc-700 transition-colors flex-shrink-0">
@@ -154,7 +141,7 @@ export default function Hero() {
         </div>
 
         {/* Footer Actions */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4 border-t border-zinc-800/80/40">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4 border-t border-zinc-800/40">
           <Link
             to="/matches"
             className="w-full sm:w-auto px-10 py-3.5 rounded-2xl bg-primary text-white font-display font-bold text-sm uppercase tracking-wider hover:bg-highlight transition-all duration-200 active:scale-95 text-center shadow-lg shadow-primary/20"

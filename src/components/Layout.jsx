@@ -7,7 +7,6 @@ const Layout = () => {
     { path: "/", icon: <Home size={20} />, label: "Hub" },
     { path: "/matches", icon: <Trophy size={20} />, label: "Live Now" },
     { path: "/movies", icon: <Film size={20} />, label: "Highlights" },
-    { path: "/blogs", icon: <BookOpen size={20} />, label: "News" },
   ];
 
   return (
