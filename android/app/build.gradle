@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.razorbill.website"
+    namespace "com.detour.app"
     compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.razorbill.website"
+        applicationId "com.detour.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -18,9 +18,9 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("/home/kibanga/razorbill-key.jks")
+            storeFile file("/home/kibanga/detour-key.jks")
             storePassword "10183510"
-            keyAlias "razorbill"
+            keyAlias "detour"
             keyPassword "10183510"
         }
     }

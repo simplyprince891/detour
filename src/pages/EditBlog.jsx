@@ -203,19 +203,19 @@ const EditBlog = () => {
           <nav className="flex flex-col gap-4">
             <Link
               to="/blogs/new"
-              className="flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-xl font-semibold"
+              className="flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-2xl font-semibold"
             >
               <AiOutlinePlus /> Create Blog
             </Link>
             <Link
               to={`/authors/edit/${authorId}`}
-              className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-xl hover:bg-gray-700"
+              className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-2xl hover:bg-gray-700"
             >
               <AiOutlineEdit /> Edit Profile
             </Link>
             <Link
               to={`/authors/${authorId}`}
-              className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-xl hover:bg-gray-700"
+              className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-2xl hover:bg-gray-700"
             >
               <AiOutlineEye /> View Profile
             </Link>
@@ -228,7 +228,7 @@ const EditBlog = () => {
             localStorage.removeItem("authorId");
             navigate("/authors/login");
           }}
-          className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-xl hover:bg-red-600 font-semibold"
+          className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-2xl hover:bg-red-600 font-semibold"
         >
           <AiOutlineLogout /> Logout
         </button>
@@ -247,7 +247,7 @@ const EditBlog = () => {
           {/* Form */}
           <form
             onSubmit={handleUpdate}
-            className="bg-black/60 p-6 rounded-xl border border-gray-700 flex flex-col gap-4"
+            className="bg-black/60 p-6 rounded-2xl border border-gray-700 flex flex-col gap-4"
           >
             <label className="flex flex-col text-gray-200">
               Title *
@@ -255,7 +255,7 @@ const EditBlog = () => {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="mt-1 p-2 rounded-xl bg-black/50 border border-gray-600 text-white"
+                className="mt-1 p-2 rounded-2xl bg-black/50 border border-gray-600 text-white"
                 required
               />
             </label>
@@ -265,7 +265,7 @@ const EditBlog = () => {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="mt-1 p-2 rounded-xl bg-black/50 border border-gray-600 text-white"
+                className="mt-1 p-2 rounded-2xl bg-black/50 border border-gray-600 text-white"
               >
                 {categories.map((c) => (
                   <option key={c}>{c}</option>
@@ -279,7 +279,7 @@ const EditBlog = () => {
                 type="file"
                 accept="image/*"
                 onChange={(e) => setImageFile(e.target.files[0])}
-                className="mt-1 p-2 rounded-xl bg-black/50 border border-gray-600 text-white"
+                className="mt-1 p-2 rounded-2xl bg-black/50 border border-gray-600 text-white"
               />
             </label>
 
@@ -357,7 +357,7 @@ const EditBlog = () => {
               </button>
             </div>
 
-            <div className="border border-gray-600 rounded-xl bg-black/50 min-h-[200px] p-2 text-white">
+            <div className="border border-gray-600 rounded-2xl bg-black/50 min-h-[200px] p-2 text-white">
               <Editor
                 editorState={editorState}
                 onChange={handleEditorChange}
@@ -368,24 +368,24 @@ const EditBlog = () => {
             <button
               type="submit"
               disabled={loading}
-              className="mt-4 bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold hover:bg-yellow-500"
+              className="mt-4 bg-yellow-400 text-black px-6 py-3 rounded-2xl font-semibold hover:bg-yellow-500"
             >
               {loading ? "Updating..." : "Update Blog"}
             </button>
           </form>
 
           {/* Live Preview */}
-          <div className="bg-black/60 p-6 rounded-xl border border-gray-700 flex flex-col gap-4">
+          <div className="bg-black/60 p-6 rounded-2xl border border-gray-700 flex flex-col gap-4">
             {imageFile ? (
               <img
                 src={URL.createObjectURL(imageFile)}
-                className="w-full rounded-xl object-cover max-h-64"
+                className="w-full rounded-2xl object-cover max-h-64"
                 alt="Preview"
               />
             ) : imageURL ? (
               <img
                 src={imageURL}
-                className="w-full rounded-xl object-cover max-h-64"
+                className="w-full rounded-2xl object-cover max-h-64"
                 alt="Preview"
               />
             ) : null}

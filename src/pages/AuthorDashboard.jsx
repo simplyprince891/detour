@@ -102,7 +102,7 @@ const AuthorsDashboard = () => {
   if (loading)
     return (
       <div className="text-white text-center py-10 font-mono animate-pulse">
-        CONNECTING_TO_ALCODIST_HUB...
+        CONNECTING_TO_DETOUR_HUB...
       </div>
     );
 
@@ -132,28 +132,28 @@ const AuthorsDashboard = () => {
       >
         <div>
           <h2 className="text-yellow-400 font-playfair text-2xl font-bold mb-8 hidden md:block uppercase tracking-widest text-center">
-            ALCODIST
+            DETOUR
           </h2>
 
           <nav className="flex flex-col gap-4">
             <Link
               to="/blogs/new"
               onClick={() => setSidebarOpen(false)}
-              className="flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-xl hover:bg-yellow-500 transition font-bold uppercase text-xs"
+              className="flex items-center gap-2 bg-yellow-400 text-black px-4 py-2 rounded-2xl hover:bg-yellow-500 transition font-bold uppercase text-xs"
             >
               <AiOutlinePlus /> Create New
             </Link>
             <Link
               to={`/authors/edit/${authorId}`}
               onClick={() => setSidebarOpen(false)}
-              className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-xl hover:bg-white/10 transition font-semibold text-xs uppercase"
+              className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-2xl hover:bg-white/10 transition font-semibold text-xs uppercase"
             >
               <AiOutlineEdit /> Profile Settings
             </Link>
             <Link
               to={`/authors/${authorId}`}
               onClick={() => setSidebarOpen(false)}
-              className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-xl hover:bg-white/10 transition font-semibold text-xs uppercase"
+              className="flex items-center gap-2 text-gray-200 px-4 py-2 rounded-2xl hover:bg-white/10 transition font-semibold text-xs uppercase"
             >
               <AiOutlineEye /> Public View
             </Link>
@@ -162,7 +162,7 @@ const AuthorsDashboard = () => {
 
         <button
           onClick={handleLogout}
-          className="flex items-center gap-2 text-gray-400 px-4 py-2 rounded-xl hover:bg-red-600/20 hover:text-red-500 transition font-bold text-xs uppercase"
+          className="flex items-center gap-2 text-gray-400 px-4 py-2 rounded-2xl hover:bg-red-600/20 hover:text-red-500 transition font-bold text-xs uppercase"
         >
           <AiOutlineLogout /> Terminate Session
         </button>
@@ -180,7 +180,7 @@ const AuthorsDashboard = () => {
             </p>
 
             {!isProfileComplete && (
-              <div className="mt-4 bg-red-600/10 border border-red-500/50 text-red-500 px-4 py-2 rounded-xl text-xs font-bold inline-block">
+              <div className="mt-4 bg-red-600/10 border border-red-500/50 text-red-500 px-4 py-2 rounded-2xl text-xs font-bold inline-block">
                 CRITICAL: PROFILE_INCOMPLETE.{" "}
                 <Link to={`/authors/edit/${authorId}`} className="underline">
                   FIX_NOW
@@ -297,7 +297,7 @@ const AuthorsDashboard = () => {
         )}
 
         <div className="mt-12 text-gray-500 text-[10px] font-mono uppercase tracking-[0.2em] border-t border-white/5 pt-4">
-          ALCODIST_HUB_CORE // SECURE_AUTH_ACTIVE
+          DETOUR_HUB_CORE // SECURE_AUTH_ACTIVE
         </div>
       </main>
     </div>

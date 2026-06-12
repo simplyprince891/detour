@@ -19,9 +19,9 @@ const ResultsPage = () => {
       <div className="max-w-7xl mx-auto">
         <header className="mb-16 text-center lg:text-left space-y-4">
           <h1 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-tighter">
-            ARCHIVE<span className="text-lab-emerald">.LOGS</span>
+            ARCHIVE<span className="text-primary">.LOGS</span>
           </h1>
-          <div className="h-1 w-24 bg-lab-emerald" />
+          <div className="h-1 w-24 bg-primary" />
         </header>
 
         {/* Reusing the Intelligent Shell */}

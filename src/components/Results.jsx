@@ -3,10 +3,10 @@ import { Database, ChevronRight, Terminal } from "lucide-react";
 
 const Results = () => {
   return (
-    <div className="w-full rounded-2xl border border-zinc-900 bg-zinc-950/20 p-8 sm:p-12 transition-all duration-300 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-6 my-6">
+    <div className="w-full rounded-2xl border border-zinc-800/80 bg-background/20 p-8 sm:p-12 transition-all duration-300 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-6 my-6">
       {/* Left Column: Icon and Info */}
       <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left min-w-0">
-        <div className="p-3 bg-zinc-900/40 border border-zinc-900 rounded-xl flex-shrink-0">
+        <div className="p-3 bg-card/40 border border-zinc-800/80 rounded-2xl flex-shrink-0">
           <Database className="text-zinc-500 animate-pulse" size={22} />
         </div>
 
@@ -28,7 +28,7 @@ const Results = () => {
       <div className="flex flex-col items-center sm:items-end gap-2 flex-shrink-0 w-full sm:w-auto">
         <button
           disabled
-          className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-zinc-900 bg-zinc-950/40 text-zinc-600 font-mono text-[10px] uppercase tracking-widest cursor-not-allowed"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-2.5 rounded-2xl border border-zinc-800/80 bg-background/40 text-zinc-600 font-mono text-[10px] uppercase tracking-widest cursor-not-allowed"
         >
           <Terminal size={12} /> System Offline
         </button>

@@ -1,4 +1,4 @@
-package com.razorbill.website;
+package com.detour.website;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -199,7 +199,7 @@ export default function BlogDetail() {
                       "_blank"
                     )
                   }
-                  className="cursor-pointer hover:text-green-500 transition"
+                  className="cursor-pointer hover:text-highlight transition"
                 />
                 <SiX
                   onClick={() =>
@@ -246,7 +246,7 @@ export default function BlogDetail() {
                   key={c.id}
                   className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl flex gap-4"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center border border-white/10 text-gray-500 font-mono italic">
+                  <div className="w-10 h-10 rounded-2xl bg-gray-900 flex items-center justify-center border border-white/10 text-gray-500 font-mono italic">
                     {c.username?.charAt(0) || "?"}
                   </div>
                   <div className="space-y-1">
@@ -276,7 +276,7 @@ export default function BlogDetail() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="AUTHOR_NAME"
-                  className="bg-black border border-white/10 rounded-xl px-4 py-3 text-xs font-mono text-white focus:outline-none focus:border-blue-500 transition"
+                  className="bg-black border border-white/10 rounded-2xl px-4 py-3 text-xs font-mono text-white focus:outline-none focus:border-blue-500 transition"
                   required
                 />
               </div>
@@ -285,10 +285,10 @@ export default function BlogDetail() {
                 onChange={(e) => setNewComment(e.target.value)}
                 placeholder="WRITE_RESPONSE..."
                 rows={4}
-                className="w-full bg-black border border-white/10 rounded-xl px-4 py-3 text-xs font-mono text-white focus:outline-none focus:border-blue-500 transition resize-none"
+                className="w-full bg-black border border-white/10 rounded-2xl px-4 py-3 text-xs font-mono text-white focus:outline-none focus:border-blue-500 transition resize-none"
                 required
               />
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-blue-500 transition-all">
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-blue-500 transition-all">
                 Submit_To_Archive
               </button>
             </form>
@@ -326,7 +326,7 @@ export default function BlogDetail() {
             </div>
             <Link
               to="/blogs"
-              className="block text-center py-3 border border-dashed border-white/10 rounded-xl text-[9px] font-mono uppercase tracking-widest hover:border-blue-500 hover:text-white transition-all"
+              className="block text-center py-3 border border-dashed border-white/10 rounded-2xl text-[9px] font-mono uppercase tracking-widest hover:border-blue-500 hover:text-white transition-all"
             >
               View_All_Logs
             </Link>
@@ -336,7 +336,7 @@ export default function BlogDetail() {
             <h3 className="text-lg font-bold text-white">Join the Archive.</h3>
             <p className="text-xs text-blue-100 font-light leading-relaxed">
               Have a technical retrospective or startup insight to share?
-              Request contributor access to the Alcodist Registry.
+              Request contributor access to the Detour Registry.
             </p>
             <Link
               to="/authors/register"

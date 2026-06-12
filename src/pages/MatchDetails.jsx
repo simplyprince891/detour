@@ -10,7 +10,7 @@ import {
   Info,
 } from "lucide-react";
 import BASE_URL from "../api";
-import razor from "../assets/razor.jpeg";
+import detour_bg from "../assets/detour_bg.jpeg";
 
 const MatchDetails = () => {
   const { id } = useParams();
@@ -24,7 +24,7 @@ const MatchDetails = () => {
   // Premium background blend mimicking pitch floodlights piercing dark stadium concrete
   const backgroundStyle = useMemo(
     () => ({
-      backgroundImage: `linear-gradient(to bottom, rgba(9, 9, 11, 0.88), rgba(9, 9, 11, 0.99)), url(${razor})`,
+      backgroundImage: `linear-gradient(to bottom, rgba(9, 9, 11, 0.88), rgba(9, 9, 11, 0.99)), url(${detour_bg})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundAttachment: "fixed",
@@ -105,8 +105,8 @@ const MatchDetails = () => {
 
   if (loading)
     return (
-      <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center space-y-4">
-        <Zap className="text-emerald-400 animate-pulse" size={32} />
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center space-y-4">
+        <Zap className="text-primary animate-pulse" size={32} />
         <p className="font-mono text-[11px] uppercase tracking-widest text-zinc-500">
           Loading Media Player...
         </p>
@@ -115,14 +115,14 @@ const MatchDetails = () => {
 
   if (error)
     return (
-      <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center space-y-4 px-4 text-center">
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center space-y-4 px-4 text-center">
         <Info className="text-zinc-600" size={32} />
         <p className="font-mono text-xs uppercase tracking-wider text-zinc-400">
           {error}
         </p>
         <Link
           to="/matches"
-          className="text-xs font-mono text-emerald-400 hover:underline uppercase tracking-wider"
+          className="text-xs font-mono text-primary hover:underline uppercase tracking-wider"
         >
           Return to Match Center
         </Link>
@@ -131,11 +131,11 @@ const MatchDetails = () => {
 
   return (
     <div
-      className="relative min-h-screen text-zinc-100 pb-20 selection:bg-emerald-500 selection:text-black overflow-x-hidden"
+      className="relative min-h-screen text-zinc-100 pb-20 selection:bg-primary selection:text-black overflow-x-hidden"
       style={backgroundStyle}
     >
       {/* Stadium Ambient Floodlight Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[350px] bg-gradient-to-b from-emerald-500/5 to-transparent blur-[140px] pointer-events-none z-0" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[350px] bg-gradient-to-b from-primary/5 to-transparent blur-[140px] pointer-events-none z-0" />
 
       {/* Top Navigation */}
       <nav className="relative p-6 max-w-[1600px] mx-auto px-4 lg:px-8 z-10">
@@ -154,8 +154,8 @@ const MatchDetails = () => {
             {/* The Main Stage (Video Frame) */}
             <div className="relative group">
               {/* Dynamic Aura behind the match screen */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/10 via-zinc-500/5 to-emerald-500/10 blur-xl opacity-50 transition-opacity duration-500 group-hover:opacity-70" />
-              <div className="relative aspect-video bg-zinc-950 rounded-xl overflow-hidden border border-zinc-800/60 shadow-2xl shadow-black/80">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/10 via-zinc-500/5 to-primary/10 blur-xl opacity-50 transition-opacity duration-500 group-hover:opacity-70" />
+              <div className="relative aspect-video bg-background rounded-2xl overflow-hidden border border-zinc-800/80/60 shadow-2xl shadow-black/80">
                 {streams.length > 0 ? (
                   <iframe
                     src={streams[selectedStreamIndex]?.embedUrl}
@@ -164,7 +164,7 @@ const MatchDetails = () => {
                     title="Live Match Stream"
                   />
                 ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-500 space-y-3 bg-zinc-950/90">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-500 space-y-3 bg-background/90">
                     <Info size={36} className="opacity-30 text-zinc-400" />
                     <p className="font-mono text-xs uppercase tracking-widest opacity-60">
                       No Live Streams Available
@@ -175,14 +175,14 @@ const MatchDetails = () => {
             </div>
 
             {/* Match Information Bar */}
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-6 border-b border-zinc-900/60 backdrop-blur-sm px-2">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-6 border-b border-zinc-800/80/60 backdrop-blur-sm px-2">
               <div className="flex items-center gap-6">
                 <div className="text-right">
                   <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-white">
                     {matchDetails?.teams?.home?.name}
                   </h3>
                 </div>
-                <div className="px-3 py-1 rounded-md bg-zinc-900/80 border border-zinc-800 font-mono text-[10px] text-emerald-400 font-bold shadow-inner">
+                <div className="px-3 py-1 rounded-md bg-card/80 border border-zinc-800/80 font-mono text-[10px] text-primary font-bold shadow-inner">
                   VS
                 </div>
                 <div className="text-left">
@@ -197,7 +197,7 @@ const MatchDetails = () => {
                   <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider">
                     Stream Optimization
                   </span>
-                  <span className="text-xs font-bold text-emerald-400">
+                  <span className="text-xs font-bold text-primary">
                     Adaptive HD 1080p
                   </span>
                 </div>
@@ -214,18 +214,18 @@ const MatchDetails = () => {
                   <button
                     key={index}
                     onClick={() => setSelectedStreamIndex(index)}
-                    className={`flex items-center justify-between p-4 rounded-lg border backdrop-blur-md transition-all duration-200 ${
+                    className={`flex items-center justify-between p-4 rounded-2xl border backdrop-blur-md transition-all duration-200 ${
                       selectedStreamIndex === index
                         ? "bg-zinc-100 text-zinc-950 border-zinc-100 shadow-lg"
-                        : "bg-zinc-950/40 border-zinc-800/80 text-zinc-400 hover:border-zinc-700 hover:text-zinc-100"
+                        : "bg-background/40 border-zinc-800/80/80 text-zinc-400 hover:border-zinc-700 hover:text-zinc-100"
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <div
                         className={`p-2 rounded ${
                           selectedStreamIndex === index
-                            ? "bg-zinc-950/10"
-                            : "bg-zinc-950"
+                            ? "bg-background/10"
+                            : "bg-background"
                         }`}
                       >
                         <Play
@@ -253,7 +253,7 @@ const MatchDetails = () => {
                         className={
                           selectedStreamIndex === index
                             ? "text-zinc-950"
-                            : "text-emerald-400"
+                            : "text-primary"
                         }
                       />
                     )}
@@ -265,7 +265,7 @@ const MatchDetails = () => {
 
           {/* RIGHT: SIDEBAR (Related Broadcasts) */}
           <div className="xl:w-[380px] space-y-6 flex-shrink-0">
-            <div className="bg-zinc-950/40 border border-zinc-900/80 rounded-xl p-6 backdrop-blur-md">
+            <div className="bg-background/40 border border-zinc-800/80/80 rounded-2xl p-6 backdrop-blur-md">
               <h3 className="font-mono text-[11px] text-zinc-400 uppercase tracking-widest mb-4 flex items-center gap-2">
                 <Monitor size={14} /> Other Live Events
               </h3>
@@ -276,10 +276,10 @@ const MatchDetails = () => {
                     <Link
                       key={m.id}
                       to={`/matches/${m.id}`}
-                      className="flex items-center justify-between p-3 rounded-lg hover:bg-zinc-900/40 border border-transparent hover:border-zinc-800/60 transition-all group"
+                      className="flex items-center justify-between p-3 rounded-2xl hover:bg-card/40 border border-transparent hover:border-zinc-800/80/60 transition-all group"
                     >
                       <div className="space-y-1">
-                        <p className="text-[11px] font-bold text-zinc-300 uppercase group-hover:text-emerald-400 transition-colors">
+                        <p className="text-[11px] font-bold text-zinc-300 uppercase group-hover:text-primary transition-colors">
                           {m.teams?.home?.name}{" "}
                           <span className="text-zinc-600 mx-1 font-normal lowercase">
                             vs
@@ -293,7 +293,7 @@ const MatchDetails = () => {
                           })}
                         </p>
                       </div>
-                      <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
                     </Link>
                   ))}
                 </div>
@@ -305,9 +305,9 @@ const MatchDetails = () => {
             </div>
 
             {/* Edge Performance Card */}
-            <div className="p-5 rounded-xl border border-zinc-900/80 bg-zinc-950/20 backdrop-blur-sm">
+            <div className="p-5 rounded-2xl border border-zinc-800/80/80 bg-background/20 backdrop-blur-sm">
               <div className="flex items-center gap-2 mb-2">
-                <Globe size={13} className="text-emerald-400" />
+                <Globe size={13} className="text-primary" />
                 <span className="text-[10px] font-mono text-zinc-400 uppercase font-bold tracking-wider">
                   Network Performance
                 </span>

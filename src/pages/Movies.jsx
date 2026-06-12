@@ -5,7 +5,7 @@ import bill from "../assets/bill.png";
 
 export default function Movies() {
   return (
-    <section className="relative flex flex-col items-center justify-center text-center text-white py-24 px-4 sm:px-6 min-h-[70vh] bg-zinc-950 border border-zinc-900 rounded-3xl m-2 sm:m-4 shadow-2xl overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center text-center text-white py-24 px-4 sm:px-6 min-h-[70vh] bg-background border border-zinc-800/80 rounded-3xl m-2 sm:m-4 shadow-2xl overflow-hidden">
       {/* CSS-Only Depth Pattern */}
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
@@ -16,13 +16,13 @@ export default function Movies() {
       />
 
       {/* Subtle Bottom-Right Glow for Contrast */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-4xl w-full relative z-10">
         {/* Badge Telemetry */}
         <div className="flex items-center justify-center gap-3 mb-8">
           <div className="h-[1px] w-6 bg-zinc-800" />
-          <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-emerald-400 font-bold">
+          <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-primary font-bold">
             Movies Section
           </span>
           <div className="h-[1px] w-6 bg-zinc-800" />
@@ -31,7 +31,7 @@ export default function Movies() {
         {/* Brand Header */}
         <h2 className="flex flex-wrap items-center justify-center gap-3 text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter uppercase leading-none mb-6">
           <span className="text-white">MOVIES</span>
-          <span className="bg-emerald-400 text-zinc-950 text-[18px] sm:text-3xl md:text-4xl font-mono font-black px-3 py-1 rounded-xl tracking-widest shadow-md shadow-emerald-500/10">
+          <span className="bg-primary text-zinc-950 text-[18px] sm:text-3xl md:text-4xl font-mono font-black px-3 py-1 rounded-2xl tracking-widest shadow-md shadow-primary/10">
             .STREAM
           </span>
         </h2>
@@ -57,7 +57,7 @@ export default function Movies() {
       <div className="mt-8 w-full max-w-xs sm:max-w-none relative z-10">
         <Link
           to="/movies/home"
-          className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-12 py-4 bg-zinc-100 text-zinc-950 rounded-xl overflow-hidden transition-all duration-200 hover:bg-emerald-400 active:scale-95 shadow-lg shadow-black/40"
+          className="group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 px-12 py-4 bg-zinc-100 text-zinc-950 rounded-2xl overflow-hidden transition-all duration-200 hover:bg-primary active:scale-95 shadow-lg shadow-black/40"
         >
           <span className="font-black text-xs uppercase tracking-widest">
             Open Movies

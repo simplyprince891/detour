@@ -107,14 +107,14 @@ const NewBlog = () => {
 
   return (
     <div className="min-h-screen bg-[#020202] text-gray-300 font-sans flex flex-col md:flex-row">
-      {/* Sidebar - Kept as per your design but darkened for Alcodist aesthetic */}
+      {/* Sidebar - Kept as per your design but darkened for Detour aesthetic */}
       <aside className="bg-black border-r border-white/5 p-8 md:w-72">
         <div className="mb-10">
-          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-black mb-4">
+          <div className="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-black mb-4">
             <Terminal size={20} />
           </div>
           <h2 className="text-[10px] font-mono uppercase tracking-[0.3em] text-gray-600">
-            Alcodist_Registry
+            Detour_Registry
           </h2>
         </div>
         <nav className="flex flex-col gap-2">
@@ -122,7 +122,7 @@ const NewBlog = () => {
             <button
               key={t.id}
               onClick={() => setType(t.id)}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl text-[10px] font-mono uppercase tracking-widest transition-all ${
+              className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-[10px] font-mono uppercase tracking-widest transition-all ${
                 type === t.id
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20"
                   : "hover:bg-white/5 text-gray-500"
@@ -157,7 +157,7 @@ const NewBlog = () => {
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-blue-500 outline-none transition"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-4 py-3 text-white focus:border-blue-500 outline-none transition"
                     placeholder="Architecture of MO-jobs..."
                     required
                   />
@@ -169,7 +169,7 @@ const NewBlog = () => {
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-blue-500 outline-none transition"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-4 py-3 text-white focus:border-blue-500 outline-none transition"
                   >
                     {categories.map((c) => (
                       <option key={c} value={c}>
@@ -190,7 +190,7 @@ const NewBlog = () => {
                     type="text"
                     value={techStack}
                     onChange={(e) => setTechStack(e.target.value)}
-                    className="w-full bg-blue-500/5 border border-blue-500/20 rounded-xl px-4 py-3 text-white placeholder:text-gray-700 outline-none"
+                    className="w-full bg-blue-500/5 border border-blue-500/20 rounded-2xl px-4 py-3 text-white placeholder:text-gray-700 outline-none"
                     placeholder="NestJS, PostgreSQL, Docker..."
                   />
                 </div>

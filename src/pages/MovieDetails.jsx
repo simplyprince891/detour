@@ -87,13 +87,13 @@ const MovieDetails = () => {
 
   if (loading)
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center font-mono text-zinc-500">
+      <div className="min-h-screen bg-background flex items-center justify-center font-mono text-zinc-500">
         INITIALIZING STREAM...
       </div>
     );
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 pb-20">
+    <div className="min-h-screen bg-background text-zinc-100 pb-20">
       {/* --- HERO --- */}
       <div className="relative h-[80vh] w-full">
         <img
@@ -105,7 +105,7 @@ const MovieDetails = () => {
         <div className="absolute top-6 left-6 z-10 flex gap-4">
           <button
             onClick={() => navigate(-1)}
-            className="bg-zinc-900/80 backdrop-blur p-3 rounded-full hover:bg-emerald-500 transition-colors"
+            className="bg-card/80 backdrop-blur p-3 rounded-full hover:bg-primary transition-colors"
           >
             <ArrowLeft size={20} />
           </button>
@@ -118,12 +118,12 @@ const MovieDetails = () => {
               toggleWatchlist(details, type);
               setIsSaved(!isSaved); // Toggle visual state
             }}
-            className="bg-zinc-900/80 backdrop-blur p-3 rounded-full hover:bg-emerald-500 transition-colors"
+            className="bg-card/80 backdrop-blur p-3 rounded-full hover:bg-primary transition-colors"
           >
             <Heart
               size={20}
               className={
-                isSaved ? "fill-emerald-500 text-emerald-500" : "text-white"
+                isSaved ? "fill-highlight text-primary" : "text-white"
               }
             />
           </button>
@@ -138,7 +138,7 @@ const MovieDetails = () => {
               {details.release_date?.split("-")[0] ||
                 details.first_air_date?.split("-")[0]}
             </span>
-            <span className="flex items-center gap-1 text-emerald-400">
+            <span className="flex items-center gap-1 text-primary">
               <Star size={12} fill="currentColor" />{" "}
               {details.vote_average?.toFixed(1)}
             </span>
@@ -154,10 +154,10 @@ const MovieDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-8">
             {type === "tv" && (
-              <div className="flex flex-col md:flex-row gap-4 bg-zinc-900 p-4 rounded-xl">
+              <div className="flex flex-col md:flex-row gap-4 bg-card p-4 rounded-2xl">
                 <select
                   onChange={(e) => setSelectedSeason(Number(e.target.value))}
-                  className="w-full md:w-auto bg-zinc-800 px-4 py-2 rounded-lg text-xs font-bold uppercase outline-none"
+                  className="w-full md:w-auto bg-zinc-800 px-4 py-2 rounded-2xl text-xs font-bold uppercase outline-none"
                 >
                   {details.seasons?.map((s) => (
                     <option key={s.id} value={s.season_number}>
@@ -167,7 +167,7 @@ const MovieDetails = () => {
                 </select>
                 <select
                   onChange={(e) => setSelectedEpisode(Number(e.target.value))}
-                  className="w-full bg-zinc-800 px-4 py-2 rounded-lg text-xs font-bold uppercase flex-1 outline-none"
+                  className="w-full bg-zinc-800 px-4 py-2 rounded-2xl text-xs font-bold uppercase flex-1 outline-none"
                 >
                   {seasonData?.episodes?.map((ep) => (
                     <option key={ep.id} value={ep.episode_number}>
@@ -177,7 +177,7 @@ const MovieDetails = () => {
                 </select>
               </div>
             )}
-            <div className="aspect-video bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800">
+            <div className="aspect-video bg-card rounded-2xl overflow-hidden border border-zinc-800/80">
               <iframe
                 src={getStreamURL()}
                 className="w-full h-full"
@@ -187,8 +187,8 @@ const MovieDetails = () => {
             </div>
           </div>
 
-          <div className="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 h-fit">
-            <h3 className="text-xs font-black uppercase tracking-widest text-emerald-500 mb-4">
+          <div className="bg-card p-6 rounded-2xl border border-zinc-800/80 h-fit">
+            <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-4">
               Cast
             </h3>
             <div className="grid grid-cols-2 gap-4">
@@ -196,7 +196,7 @@ const MovieDetails = () => {
                 <div key={person.id} className="text-[10px]">
                   <img
                     src={`https://image.tmdb.org/t/p/w200${person.profile_path}`}
-                    className="rounded-lg mb-2 w-full aspect-[2/3] object-cover"
+                    className="rounded-2xl mb-2 w-full aspect-[2/3] object-cover"
                     alt={person.name}
                   />
                   <p className="font-bold truncate">{person.name}</p>
@@ -208,7 +208,7 @@ const MovieDetails = () => {
         </div>
 
         <section className="overflow-hidden">
-          <h3 className="text-xs font-black uppercase tracking-widest text-emerald-500 mb-6">
+          <h3 className="text-xs font-black uppercase tracking-widest text-primary mb-6">
             Similar Titles
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
@@ -218,14 +218,14 @@ const MovieDetails = () => {
                 to={`/movies/home/${item.media_type || type}/${item.id}`}
                 className="group"
               >
-                <div className="aspect-[2/3] bg-zinc-900 rounded-lg overflow-hidden mb-3">
+                <div className="aspect-[2/3] bg-card rounded-2xl overflow-hidden mb-3">
                   <img
                     src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     alt={item.title || item.name}
                   />
                 </div>
-                <p className="text-[10px] font-bold uppercase text-zinc-300 group-hover:text-emerald-400 transition-colors truncate">
+                <p className="text-[10px] font-bold uppercase text-zinc-300 group-hover:text-primary transition-colors truncate">
                   {item.title || item.name}
                 </p>
               </Link>

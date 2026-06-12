@@ -79,7 +79,7 @@ const AuthorProfile = () => {
         <AiOutlineArrowLeft /> {isPrivate ? "Back to Dashboard" : "Back"}
       </Link>
 
-      <div className="bg-black/60 p-8 rounded-xl border border-gray-700 w-full max-w-md flex flex-col items-center gap-6">
+      <div className="bg-black/60 p-8 rounded-2xl border border-gray-700 w-full max-w-md flex flex-col items-center gap-6">
         {/* Avatar */}
         {author.avatar_url ? (
           <img
@@ -126,13 +126,13 @@ const AuthorProfile = () => {
             <div className="w-full flex flex-col gap-2 mt-4">
               <Link
                 to={`/authors/edit/${id}`}
-                className="bg-yellow-400 text-black px-6 py-2 rounded-xl font-semibold hover:bg-yellow-500 flex items-center justify-center gap-2"
+                className="bg-yellow-400 text-black px-6 py-2 rounded-2xl font-semibold hover:bg-yellow-500 flex items-center justify-center gap-2"
               >
                 <AiOutlineEdit /> Edit Profile
               </Link>
               <button
                 onClick={handleLogout}
-                className="bg-red-600 text-white px-6 py-2 rounded-xl font-semibold hover:bg-red-700 flex items-center justify-center gap-2"
+                className="bg-red-600 text-white px-6 py-2 rounded-2xl font-semibold hover:bg-red-700 flex items-center justify-center gap-2"
               >
                 <AiOutlineLogout /> Logout
               </button>
@@ -153,16 +153,16 @@ const AuthorProfile = () => {
                     <Link
                       key={blog.id}
                       to={`/blogs/${blog.id}`}
-                      className="flex gap-3 items-center bg-black/50 p-3 rounded-xl border border-gray-700 hover:border-yellow-400 transition"
+                      className="flex gap-3 items-center bg-black/50 p-3 rounded-2xl border border-gray-700 hover:border-yellow-400 transition"
                     >
                       {blog.image_url ? (
                         <img
                           src={blog.image_url}
                           alt={blog.title}
-                          className="w-16 h-16 object-cover rounded-lg"
+                          className="w-16 h-16 object-cover rounded-2xl"
                         />
                       ) : (
-                        <div className="w-16 h-16 bg-gray-700 rounded-lg flex items-center justify-center text-sm text-gray-300">
+                        <div className="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center text-sm text-gray-300">
                           No Image
                         </div>
                       )}

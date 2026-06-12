@@ -9,15 +9,15 @@ const MatchCard = React.memo(({ match }) => {
   const awayTeam = match.teams?.away;
 
   return (
-    <div className="group relative bg-zinc-950 border border-zinc-800 rounded-xl p-5 transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/50">
+    <div className="group relative bg-background border border-zinc-800/80 rounded-2xl p-5 transition-all duration-300 hover:border-zinc-700 hover:bg-card/50">
       {/* Live Status Header */}
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center gap-2">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
           </span>
-          <span className="font-mono text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
+          <span className="font-mono text-[10px] font-bold text-primary uppercase tracking-wider">
             Live Stream
           </span>
         </div>
@@ -31,7 +31,7 @@ const MatchCard = React.memo(({ match }) => {
         {/* Home Team */}
         <div className="col-span-3 flex flex-col items-center gap-3">
           {/* Soft Square Badge Frame - Prevents Rectangular Badges from Squishing */}
-          <div className="h-16 w-16 rounded-xl bg-zinc-900 border border-zinc-800/80 p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-inner">
+          <div className="h-16 w-16 rounded-2xl bg-card border border-zinc-800/80/80 p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-inner">
             {homeTeam?.badge ? (
               <img
                 src={homeTeam.badge}
@@ -59,7 +59,7 @@ const MatchCard = React.memo(({ match }) => {
         {/* Away Team */}
         <div className="col-span-3 flex flex-col items-center gap-3">
           {/* Soft Square Badge Frame - Prevents Rectangular Badges from Squishing */}
-          <div className="h-16 w-16 rounded-xl bg-zinc-900 border border-zinc-800/80 p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-inner">
+          <div className="h-16 w-16 rounded-2xl bg-card border border-zinc-800/80/80 p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-inner">
             {awayTeam?.badge ? (
               <img
                 src={awayTeam.badge}
@@ -79,10 +79,10 @@ const MatchCard = React.memo(({ match }) => {
       </div>
 
       {/* Call to Action Button */}
-      <div className="pt-4 border-t border-zinc-800">
+      <div className="pt-4 border-t border-zinc-800/80">
         <Link
           to={`/matches/${match.id}`}
-          className="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-200 font-mono text-[11px] uppercase tracking-wider hover:bg-emerald-500 hover:text-black hover:border-emerald-500 transition-all duration-200 font-bold"
+          className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-card border border-zinc-800/80 text-zinc-200 font-mono text-[11px] uppercase tracking-wider hover:bg-primary hover:text-black hover:border-highlight transition-all duration-200 font-bold"
         >
           <Play size={12} className="fill-current" /> Watch Live Stream
         </Link>
@@ -198,8 +198,8 @@ const LiveMatches = () => {
     <div className="max-w-7xl mx-auto px-2 py-6 space-y-8">
       {/* Feed Information Headers */}
       <div className="flex flex-col items-center text-center space-y-2">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-zinc-800 bg-zinc-950 text-zinc-400 text-[10px] font-mono uppercase tracking-wider">
-          <Activity size={10} className="text-emerald-400" /> Active
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-zinc-800/80 bg-background text-zinc-400 text-[10px] font-mono uppercase tracking-wider">
+          <Activity size={10} className="text-primary" /> Active
           Transmissions
         </div>
         <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">
@@ -209,7 +209,7 @@ const LiveMatches = () => {
 
       {/* Error state safe alerts */}
       {error && (
-        <div className="max-w-md mx-auto p-4 rounded-lg bg-zinc-900 border border-red-900/30 text-center">
+        <div className="max-w-md mx-auto p-4 rounded-2xl bg-card border border-red-900/30 text-center">
           <p className="text-xs text-zinc-400 font-mono">
             Connection issue: {error}. Attempting auto-reconnect...
           </p>
@@ -218,7 +218,7 @@ const LiveMatches = () => {
 
       {/* Main Grid Render State */}
       {sortedMatches.length === 0 ? (
-        <div className="text-center py-24 border border-dashed border-zinc-800 rounded-xl bg-zinc-950/30">
+        <div className="text-center py-24 border border-dashed border-zinc-800/80 rounded-2xl bg-background/30">
           <p className="font-mono text-xs text-zinc-500 uppercase tracking-widest">
             No live matches are streaming right now
           </p>

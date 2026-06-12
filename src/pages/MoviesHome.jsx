@@ -89,9 +89,9 @@ const MoviesHome = () => {
   }, [filter, activeCategory, searchQuery]);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
+    <div className="min-h-screen bg-background text-zinc-100">
       {/* --- CONTROL BAR --- */}
-      <div className="sticky top-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900 p-4">
+      <div className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-zinc-800/80 p-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4">
           <form
             onSubmit={(e) => {
@@ -103,13 +103,13 @@ const MoviesHome = () => {
             <input
               type="text"
               placeholder="SEARCH TITLES..."
-              className="flex-1 bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-3 text-[10px] font-mono tracking-widest focus:border-emerald-500 outline-none"
+              className="flex-1 bg-card border border-zinc-800/80 rounded-2xl px-4 py-3 text-[10px] font-mono tracking-widest focus:border-primary outline-none"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button
               type="submit"
-              className="bg-zinc-800 px-6 rounded-lg hover:bg-emerald-500 transition-colors"
+              className="bg-zinc-800 px-6 rounded-2xl hover:bg-primary transition-colors"
             >
               <Search size={16} />
             </button>
@@ -119,19 +119,19 @@ const MoviesHome = () => {
             {/* WATCHLIST NAV LINK */}
             <Link
               to="/movies/watchlist"
-              className="flex items-center gap-2 px-6 py-3 rounded-lg text-[10px] font-bold uppercase tracking-widest bg-zinc-900 hover:bg-zinc-800 transition-colors"
+              className="flex items-center gap-2 px-6 py-3 rounded-2xl text-[10px] font-bold uppercase tracking-widest bg-card hover:bg-zinc-800 transition-colors"
             >
-              <Heart size={12} className="text-emerald-500" /> My List
+              <Heart size={12} className="text-primary" /> My List
             </Link>
 
             {["movie", "tv"].map((t) => (
               <button
                 key={t}
                 onClick={() => handleFilterChange(t)}
-                className={`px-6 py-3 rounded-lg text-[10px] font-bold uppercase tracking-widest ${
+                className={`px-6 py-3 rounded-2xl text-[10px] font-bold uppercase tracking-widest ${
                   filter === t
-                    ? "bg-emerald-500 text-zinc-950"
-                    : "bg-zinc-900 hover:bg-zinc-800"
+                    ? "bg-primary text-zinc-950"
+                    : "bg-card hover:bg-zinc-800"
                 }`}
               >
                 {t}
@@ -161,7 +161,7 @@ const MoviesHome = () => {
               to={`/movies/home/${featured.media_type || filter}/${
                 featured.id
               }`}
-              className="inline-flex items-center gap-2 bg-white text-zinc-950 px-8 py-4 rounded-lg font-black text-[10px] uppercase tracking-widest hover:bg-emerald-400 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-zinc-950 px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-primary transition-colors"
             >
               Initialize Stream <Play size={12} fill="currentColor" />
             </Link>
@@ -176,8 +176,8 @@ const MoviesHome = () => {
             onClick={() => setActiveCategory(null)}
             className={`px-4 py-2 rounded-full text-[9px] uppercase tracking-widest border ${
               !activeCategory
-                ? "bg-emerald-500 border-emerald-500"
-                : "border-zinc-800"
+                ? "bg-primary border-primary"
+                : "border-zinc-800/80"
             }`}
           >
             All
@@ -188,8 +188,8 @@ const MoviesHome = () => {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-full text-[9px] uppercase tracking-widest border ${
                 activeCategory?.name === cat.name
-                  ? "bg-emerald-500 border-emerald-500"
-                  : "border-zinc-800 hover:border-zinc-600"
+                  ? "bg-primary border-primary"
+                  : "border-zinc-800/80 hover:border-zinc-600"
               }`}
             >
               {cat.name}
@@ -206,7 +206,7 @@ const MoviesHome = () => {
             to={`/movies/home/${item.media_type || filter}/${item.id}`}
             className="group relative"
           >
-            <div className="relative aspect-[2/3] bg-zinc-900 rounded-2xl overflow-hidden mb-3 border border-zinc-800 group-hover:border-emerald-500 transition-all shadow-xl">
+            <div className="relative aspect-[2/3] bg-card rounded-2xl overflow-hidden mb-3 border border-zinc-800/80 group-hover:border-primary transition-all shadow-xl">
               {/* Heart Button */}
               <button
                 onClick={(e) => {
@@ -214,13 +214,13 @@ const MoviesHome = () => {
                   toggleWatchlist(item, filter);
                   setRefresh(!refresh); // Triggers re-render
                 }}
-                className="absolute top-2 left-2 z-20 p-2 rounded-full bg-black/60 backdrop-blur hover:bg-emerald-500 transition-colors"
+                className="absolute top-2 left-2 z-20 p-2 rounded-full bg-black/60 backdrop-blur hover:bg-primary transition-colors"
               >
                 <Heart
                   size={14}
                   className={`${
                     isInWatchlist(item.id)
-                      ? "fill-emerald-500 text-emerald-500"
+                      ? "fill-highlight text-primary"
                       : "text-white"
                   }`}
                 />
@@ -239,11 +239,11 @@ const MoviesHome = () => {
               )}
 
               <div className="absolute top-2 right-2 bg-black/60 backdrop-blur px-2 py-1 rounded text-[9px] font-bold flex items-center gap-1">
-                <Star size={10} className="text-emerald-400" />{" "}
+                <Star size={10} className="text-primary" />{" "}
                 {item.vote_average?.toFixed(1) || "0.0"}
               </div>
             </div>
-            <h3 className="text-[11px] font-bold uppercase tracking-tight text-zinc-300 group-hover:text-emerald-400 transition-colors truncate">
+            <h3 className="text-[11px] font-bold uppercase tracking-tight text-zinc-300 group-hover:text-primary transition-colors truncate">
               {item.title || item.name}
             </h3>
           </Link>

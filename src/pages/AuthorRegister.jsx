@@ -111,7 +111,7 @@ const AuthorRegister = () => {
             placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             required
           />
           <input
@@ -119,7 +119,7 @@ const AuthorRegister = () => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             required
           />
 
@@ -128,7 +128,7 @@ const AuthorRegister = () => {
             <select
               value={countryCode}
               onChange={(e) => setCountryCode(e.target.value)}
-              className="w-full sm:w-auto px-4 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full sm:w-auto px-4 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             >
               {countryCodes.map((c) => (
                 <option key={c.code} value={c.code}>
@@ -141,7 +141,7 @@ const AuthorRegister = () => {
               placeholder="712345678"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="flex-1 px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="flex-1 px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               required
             />
           </div>
@@ -152,7 +152,7 @@ const AuthorRegister = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               required
             />
             <button
@@ -171,7 +171,7 @@ const AuthorRegister = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-yellow-400 text-black font-semibold py-3 rounded-xl hover:bg-yellow-500 transition"
+            className="w-full bg-yellow-400 text-black font-semibold py-3 rounded-2xl hover:bg-yellow-500 transition"
           >
             {loading ? "Registering..." : "Register"}
           </button>

@@ -3,13 +3,13 @@ import { Activity, Calendar, Trophy, BarChart3 } from "lucide-react";
 import LiveMatches from "../components/LiveMatches";
 import TodaysMatches from "../components/TodaysMatches";
 import Results from "../components/Results";
-import razor from "../assets/razor.jpeg";
+import detour_bg from "../assets/detour_bg.jpeg";
 
 export default function MatchesPage() {
   // Premium background blend utilizing unified deep zinc tones
   const backgroundStyle = useMemo(
     () => ({
-      backgroundImage: `linear-gradient(to bottom, rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.98)), url(${razor})`,
+      backgroundImage: `linear-gradient(to bottom, rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.98)), url(${detour_bg})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundAttachment: "fixed",
@@ -19,13 +19,13 @@ export default function MatchesPage() {
 
   return (
     <div
-      className="min-h-screen text-zinc-100 selection:bg-emerald-500 selection:text-black"
+      className="min-h-screen text-zinc-100 selection:bg-primary selection:text-black"
       style={backgroundStyle}
     >
       {/* 1. Dashboard Master Header */}
       <header className="pt-16 pb-12 px-4 text-center space-y-3 max-w-xl mx-auto">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-zinc-800 bg-zinc-950/60 backdrop-blur-md text-zinc-400 text-[10px] font-mono uppercase tracking-wider">
-          <Trophy size={11} className="text-emerald-400" /> Live Broadcasting
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md border border-zinc-800/80 bg-background/60 backdrop-blur-md text-zinc-400 text-[10px] font-mono uppercase tracking-wider">
+          <Trophy size={11} className="text-primary" /> Live Broadcasting
           Hub
         </div>
 
@@ -43,10 +43,10 @@ export default function MatchesPage() {
       <main className="max-w-7xl mx-auto pb-24 px-4 space-y-20">
         {/* SECTION A: ACTIVE LIVE TRANMISSIONS (Top Priority) */}
         <section className="relative group">
-          <div className="absolute -inset-y-4 -inset-x-2 bg-zinc-900/10 rounded-2xl group-hover:bg-zinc-900/20 transition-colors duration-500 pointer-events-none" />
+          <div className="absolute -inset-y-4 -inset-x-2 bg-card/10 rounded-2xl group-hover:bg-card/20 transition-colors duration-500 pointer-events-none" />
           <div className="relative space-y-4">
             <div className="flex items-center gap-3 px-2">
-              <div className="flex items-center justify-center h-7 w-7 rounded-md bg-emerald-950 border border-emerald-900/60 text-emerald-400">
+              <div className="flex items-center justify-center h-7 w-7 rounded-md bg-primary/10 border border-primary/20 text-primary">
                 <Activity size={14} className="animate-pulse" />
               </div>
               <h3 className="font-mono text-xs font-bold text-zinc-400 uppercase tracking-widest">
@@ -59,10 +59,10 @@ export default function MatchesPage() {
 
         {/* SECTION B: UPCOMING SCHEDULE FOR TODAY */}
         <section className="relative group">
-          <div className="absolute -inset-y-4 -inset-x-2 bg-zinc-900/10 rounded-2xl group-hover:bg-zinc-900/20 transition-colors duration-500 pointer-events-none" />
+          <div className="absolute -inset-y-4 -inset-x-2 bg-card/10 rounded-2xl group-hover:bg-card/20 transition-colors duration-500 pointer-events-none" />
           <div className="relative space-y-4">
             <div className="flex items-center gap-3 px-2">
-              <div className="flex items-center justify-center h-7 w-7 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-400">
+              <div className="flex items-center justify-center h-7 w-7 rounded-md bg-card border border-zinc-800/80 text-zinc-400">
                 <Calendar size={14} />
               </div>
               <h3 className="font-mono text-xs font-bold text-zinc-400 uppercase tracking-widest">
@@ -74,10 +74,10 @@ export default function MatchesPage() {
         </section>
 
         {/* SECTION C: HISTORICAL RESULTS ARCHIVE */}
-        <section className="relative group border-t border-zinc-900 pt-16">
+        <section className="relative group border-t border-zinc-800/80 pt-16">
           <div className="relative space-y-4">
             <div className="flex items-center gap-3 px-2">
-              <div className="flex items-center justify-center h-7 w-7 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-400">
+              <div className="flex items-center justify-center h-7 w-7 rounded-md bg-card border border-zinc-800/80 text-zinc-400">
                 <BarChart3 size={14} />
               </div>
               <h3 className="font-mono text-xs font-bold text-zinc-400 uppercase tracking-widest">
@@ -90,7 +90,7 @@ export default function MatchesPage() {
       </main>
 
       {/* 3. Global Dashboard Footer */}
-      <footer className="py-12 border-t border-zinc-900 flex flex-col items-center justify-center space-y-2 bg-zinc-950/40 backdrop-blur-sm">
+      <footer className="py-12 border-t border-zinc-800/80 flex flex-col items-center justify-center space-y-2 bg-background/40 backdrop-blur-sm">
         <p className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest">
           &copy; {new Date().getFullYear()} Sports Streaming Platform
         </p>

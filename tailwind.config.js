@@ -4,23 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        // High-end Obsidian Palette
-        obsidian: {
-          900: "#050505", // True black depth
-          800: "#0D0D0D", // Main background
-          700: "#1A1A1A", // Cards/Elevated surfaces
-          600: "#262626", // Borders/Dividers
-        },
-        // Strategic Accents
-        lab: {
-          emerald: "#10B981", // Success/Live matches
-          cobalt: "#3B82F6", // Primary actions
-          slate: "#94A3B8", // Secondary text
-        },
+        primary: "#1E90FF",
+        background: "#0A0F1E",
+        highlight: "#00D4FF",
+        card: "#111827",
       },
       fontFamily: {
-        // Switching to professional sans + mono pairing
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        display: ["Barlow Condensed", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       backgroundImage: {

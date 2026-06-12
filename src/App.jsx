@@ -24,11 +24,11 @@ import MoviesHome from "./pages/MoviesHome";
 import MovieDetails from "./pages/MovieDetails";
 import Watchlist from "./pages/Watchlist";
 
-// Alcodist Hub
-import AlcodistHub from "./pages/AlcodistHub";
+// Detour
+import DetourHub from "./pages/DetourHub";
 
 //blog
-import RazorBlogsLanding from "./pages/RazorBlogsLanding";
+import NewsLanding from "./pages/NewsLanding";
 import BlogDetails from "./pages/BlogDetails";
 // Author Auth
 import AuthorLogin from "./pages/AuthorLogin";
@@ -69,13 +69,13 @@ const router = createBrowserRouter(
       />
 
       {/* SportGPT */}
-      <Route path="/about" element={<AlcodistHub />} />
+      <Route path="/about" element={<DetourHub />} />
 
       {/* Catch-all */}
       <Route path="*" element={<NotFound />} />
 
       {/* blogs */}
-      <Route path="/blogs" element={<RazorBlogsLanding />} />
+      <Route path="/blogs" element={<NewsLanding />} />
       <Route path="/blogs/:id" element={<BlogDetails />} />
       <Route path="/blogs/new" element={<NewBlog />} />
       <Route path="/blogs/:id/edit" element={<EditBlog />} />

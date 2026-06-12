@@ -75,7 +75,7 @@ const AuthorLogin = () => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             required
           />
 
@@ -85,7 +85,7 @@ const AuthorLogin = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               required
             />
             <button
@@ -104,7 +104,7 @@ const AuthorLogin = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-yellow-400 text-black font-semibold py-3 rounded-xl hover:bg-yellow-500 transition"
+            className="w-full bg-yellow-400 text-black font-semibold py-3 rounded-2xl hover:bg-yellow-500 transition"
           >
             {loading ? "Logging in..." : "Login"}
           </button>

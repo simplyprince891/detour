@@ -19,13 +19,13 @@ const Watchlist = () => {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 p-8">
+    <div className="min-h-screen bg-background text-zinc-100 p-8">
       {/* Header */}
       <div className="max-w-7xl mx-auto flex items-center justify-between mb-12">
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate(-1)}
-            className="bg-zinc-900 p-3 rounded-full hover:bg-emerald-500 transition-colors"
+            className="bg-card p-3 rounded-full hover:bg-primary transition-colors"
           >
             <ArrowLeft size={20} />
           </button>
@@ -46,7 +46,7 @@ const Watchlist = () => {
               to={`/movies/home/${item.media_type}/${item.id}`}
               className="block"
             >
-              <div className="aspect-[2/3] bg-zinc-900 rounded-2xl overflow-hidden mb-3 border border-zinc-800 group-hover:border-emerald-500 transition-all shadow-xl">
+              <div className="aspect-[2/3] bg-card rounded-2xl overflow-hidden mb-3 border border-zinc-800/80 group-hover:border-highlight transition-all shadow-xl">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -78,7 +78,7 @@ const Watchlist = () => {
           </p>
           <Link
             to="/movies/home"
-            className="mt-6 inline-block text-emerald-500 text-xs font-bold uppercase hover:underline"
+            className="mt-6 inline-block text-primary text-xs font-bold uppercase hover:underline"
           >
             Browse titles
           </Link>

@@ -184,7 +184,7 @@ const AuthorProfileEdit = () => {
 
       <div className="w-full max-w-md bg-black/60 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-gray-700">
         {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-        {success && <p className="text-green-500 text-sm mb-2">{success}</p>}
+        {success && <p className="text-primary text-sm mb-2">{success}</p>}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Avatar Upload */}
@@ -214,7 +214,7 @@ const AuthorProfileEdit = () => {
             onChange={(e) =>
               setAuthor((prev) => ({ ...prev, name: e.target.value }))
             }
-            className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             required
           />
 
@@ -226,7 +226,7 @@ const AuthorProfileEdit = () => {
             onChange={(e) =>
               setAuthor((prev) => ({ ...prev, email: e.target.value }))
             }
-            className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             required
           />
 
@@ -235,7 +235,7 @@ const AuthorProfileEdit = () => {
             <select
               value={countryCode}
               onChange={(e) => setCountryCode(e.target.value)}
-              className="px-3 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="px-3 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             >
               <option value="+254">+254 (Kenya)</option>
               <option value="+1">+1 (USA)</option>
@@ -248,7 +248,7 @@ const AuthorProfileEdit = () => {
               onChange={(e) =>
                 setAuthor((prev) => ({ ...prev, phone: e.target.value }))
               }
-              className="flex-1 px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="flex-1 px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               pattern="\d{9}"
               title="Enter 9 digits"
               required
@@ -262,7 +262,7 @@ const AuthorProfileEdit = () => {
             onChange={(e) =>
               setAuthor((prev) => ({ ...prev, bio: e.target.value }))
             }
-            className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             rows={4}
           />
 
@@ -273,7 +273,7 @@ const AuthorProfileEdit = () => {
               placeholder="New Password (optional)"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-5 py-3 rounded-xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="w-full px-5 py-3 rounded-2xl bg-gray-800/90 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
             <button
               type="button"
@@ -291,7 +291,7 @@ const AuthorProfileEdit = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-yellow-400 text-black font-semibold py-3 rounded-xl hover:bg-yellow-500 transition"
+            className="w-full bg-yellow-400 text-black font-semibold py-3 rounded-2xl hover:bg-yellow-500 transition"
           >
             {loading ? "Saving..." : "Save Profile"}
           </button>
@@ -300,7 +300,7 @@ const AuthorProfileEdit = () => {
             type="button"
             onClick={handleDelete}
             disabled={loading}
-            className="w-full bg-red-600 text-white font-semibold py-3 rounded-xl hover:bg-red-700 transition flex items-center justify-center gap-2"
+            className="w-full bg-red-600 text-white font-semibold py-3 rounded-2xl hover:bg-red-700 transition flex items-center justify-center gap-2"
           >
             <AiOutlineDelete /> Delete Account
           </button>

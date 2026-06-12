@@ -1,6 +1,25 @@
 @config "../tailwind.config.js";
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap");
 
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #1E90FF;
+  --color-background: #0A0F1E;
+  --color-highlight: #00D4FF;
+  --color-card: #111827;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --shadow-md: 0 0 12px rgba(30, 144, 255, 0.3);
+  --shadow-lg: 0 0 20px rgba(30, 144, 255, 0.6);
+}
+
+html, body {
+  background-color: #0A0F1E;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Barlow Condensed', sans-serif;
+}
