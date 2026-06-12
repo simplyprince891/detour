@@ -17,10 +17,12 @@ const Layout = () => {
         {/* Dynamic Brand Lockup */}
         <Link
           to="/"
-          className="mb-12 w-full flex items-center justify-center group-hover/sidebar:justify-start transition-all duration-300 flex-shrink-0 gap-2"
+          className="mb-12 w-full flex items-center justify-center group-hover/sidebar:justify-start transition-all duration-300 flex-shrink-0"
         >
-          <img src="/detour-logo.svg" className="h-11 w-11 flex-shrink-0 transition-all group-hover:scale-105" alt="Detour" />
-          <span className="opacity-0 max-w-0 overflow-hidden whitespace-nowrap font-display font-black tracking-tight text-white uppercase text-sm transition-all duration-300 ease-in-out group-hover/sidebar:opacity-100 group-hover/sidebar:max-w-xs">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-zinc-800 bg-card text-primary font-display font-extrabold tracking-wider text-lg transition-all group-hover:scale-105 group-hover:border-primary/40 group-hover:text-white shadow-md flex-shrink-0">
+            D
+          </div>
+          <span className="opacity-0 max-w-0 overflow-hidden whitespace-nowrap font-display font-black tracking-tight text-white uppercase text-sm transition-all duration-300 ease-in-out group-hover/sidebar:opacity-100 group-hover/sidebar:max-w-xs group-hover/sidebar:ml-3">
             DETOUR
           </span>
         </Link>
@@ -58,7 +60,6 @@ const Layout = () => {
             to="/"
             className="flex items-center gap-2 min-w-0 group flex-shrink-0"
           >
-            <img src="/detour-logo.svg" className="h-9 w-9 transition-all group-hover:scale-105" alt="Detour" />
             <span className="text-lg sm:text-2xl font-display font-black tracking-tight text-white uppercase whitespace-nowrap">
               DETOUR
             </span>
