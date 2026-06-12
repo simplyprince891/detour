@@ -25,11 +25,11 @@ export default function Hero() {
     },
     {
       to: "/movies",
-      title: "Highlights Lounge",
+      title: "Movies Lounge",
       description:
-        "A clean collection of free sports highlights and replays. High-quality streaming with zero ads and zero tracking.",
+        "A clean collection of free movies and TV shows. High-quality streaming with zero ads and zero tracking.",
       icon: <Film className="text-highlight fill-highlight/10" size={22} />,
-      tag: "HD Stream",
+      tag: "HD Streaming",
       badgeClass: "border-highlight/20 bg-highlight/5 text-highlight",
       hoverColor:
         "hover:border-highlight/40 hover:shadow-[0_0_30px_rgba(0,212,255,0.1)]",

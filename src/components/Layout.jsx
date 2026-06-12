@@ -6,7 +6,7 @@ const Layout = () => {
   const navItems = [
     { path: "/", icon: <Home size={20} />, label: "Hub" },
     { path: "/matches", icon: <Trophy size={20} />, label: "Live Now" },
-    { path: "/movies", icon: <Film size={20} />, label: "Highlights" },
+    { path: "/movies", icon: <Film size={20} />, label: "Movies" },
   ];
 
   return (
