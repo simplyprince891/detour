@@ -34,6 +34,7 @@ const MatchDetails = () => {
 
   const fetchMatchDetails = useCallback(async () => {
     const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000);
     try {
       setLoading(true);
       setError(null);
@@ -54,9 +55,13 @@ const MatchDetails = () => {
         const results = await Promise.all(
           match.sources.map(async (src) => {
             try {
+              const streamController = new AbortController();
+              const streamTimeoutId = setTimeout(() => streamController.abort(), 8000);
               const r = await fetch(
-                `${BASE_URL}/api/streams/${src.source}/${src.id}`
+                `${BASE_URL}/api/streams/${src.source}/${src.id}`,
+                { signal: streamController.signal }
               );
+              clearTimeout(streamTimeoutId);
               return r.ok ? await r.json() : null;
             } catch {
               return null;
@@ -71,12 +76,15 @@ const MatchDetails = () => {
         if (valid.length > 0) setSelectedStreamIndex(0);
       }
     } catch (err) {
-      if (err.name !== "AbortError")
+      if (err.name === "AbortError") {
+        setError("Synchronization request timed out.");
+      } else {
         setError("Failed to synchronize video feeds.");
+      }
     } finally {
+      clearTimeout(timeoutId);
       setLoading(false);
     }
-    return () => controller.abort();
   }, [id]);
 
   useEffect(() => {
@@ -120,12 +128,23 @@ const MatchDetails = () => {
         <p className="font-mono text-xs uppercase tracking-wider text-zinc-400">
           {error}
         </p>
-        <Link
-          to="/matches"
-          className="text-xs font-mono text-primary hover:underline uppercase tracking-wider"
-        >
-          Return to Match Center
-        </Link>
+        <p className="text-[11px] text-zinc-500 max-w-xs leading-relaxed">
+          If connection errors persist, your mobile carrier might be blocking the stream. Try using a VPN or set your Private DNS to <span className="text-primary font-bold">1.1.1.1</span>.
+        </p>
+        <div className="flex gap-4">
+          <button
+            onClick={() => fetchMatchDetails()}
+            className="px-5 py-2.5 bg-zinc-800 text-zinc-200 rounded-xl text-[11px] font-mono uppercase tracking-wider hover:bg-zinc-700 hover:text-white transition duration-200"
+          >
+            Retry
+          </button>
+          <Link
+            to="/matches"
+            className="px-5 py-2.5 bg-primary/10 text-primary border border-primary/20 rounded-xl text-[11px] font-mono uppercase tracking-wider hover:bg-primary/20 transition duration-200"
+          >
+            Return to Matches
+          </Link>
+        </div>
       </div>
     );
 
@@ -164,10 +183,13 @@ const MatchDetails = () => {
                     title="Live Match Stream"
                   />
                 ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-500 space-y-3 bg-background/90">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-zinc-500 space-y-4 bg-background/90 px-6 text-center">
                     <Info size={36} className="opacity-30 text-zinc-400" />
                     <p className="font-mono text-xs uppercase tracking-widest opacity-60">
                       No Live Streams Available
+                    </p>
+                    <p className="text-[11px] text-zinc-600 max-w-sm leading-relaxed">
+                      If stream servers do not load, your mobile carrier may be blocking the domain. Try using a VPN or set your Private DNS to <span className="text-primary font-bold">1.1.1.1</span>.
                     </p>
                   </div>
                 )}
