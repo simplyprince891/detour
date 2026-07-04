@@ -1,9 +1,5 @@
 // src/api.js
-//for localhost
-//const BASE_URL = "http://localhost:3000";
-
-//for prod
-const BASE_URL = "https://razorsports-backend.vercel.app";
+const BASE_URL = window.location.origin;
 
 //for local host
 //export const BLOG_URL = "http://localhost:8080/blogs";
