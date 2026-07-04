@@ -1,0 +1,22 @@
+import fs from 'fs'
+import path from 'path'
+import { pool } from '../config/database'
+
+async function runMigrations() {
+  const migrationsDir = path.resolve(__dirname)
+  const files = fs.readdirSync(migrationsDir).filter(f => f.endsWith('.sql')).sort()
+
+  for (const file of files) {
+    const sql = fs.readFileSync(path.join(migrationsDir, file), 'utf-8')
+    console.log(`Running migration: ${file}`)
+    await pool.query(sql)
+  }
+
+  console.log('All migrations complete.')
+  await pool.end()
+}
+
+runMigrations().catch((err) => {
+  console.error('Migration failed:', err)
+  process.exit(1)
+})
