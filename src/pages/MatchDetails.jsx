@@ -177,7 +177,7 @@ const MatchDetails = () => {
               <div className="relative aspect-video bg-background rounded-2xl overflow-hidden border border-zinc-800/80/60 shadow-2xl shadow-black/80">
                 {streams.length > 0 ? (
                   <iframe
-                    src={streams[selectedStreamIndex]?.embedUrl?.replace("embed.st", "streamfree.top")?.replace("streamed.pk", "streamfree.top")}
+                    src={(streams[selectedStreamIndex]?.embedUrl || "").replace("embed.st", "streamfree.top").replace("streamed.pk", "streamfree.top")}
                     allowFullScreen
                     className="w-full h-full border-0"
                     title="Live Match Stream"
