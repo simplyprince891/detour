@@ -12,6 +12,21 @@ import {
 import BASE_URL from "../api";
 import detour_bg from "../assets/detour_bg.jpeg";
 
+const cleanEmbedUrl = (url, category) => {
+  if (!url) return "";
+  if (url.includes("embed.st")) {
+    const parts = url.split("/");
+    let matchId = parts.find(p => p.includes("-vs-"));
+    if (matchId) {
+      matchId = matchId.replace("ppv-", "");
+      let cat = category || "soccer";
+      if (cat === "football") cat = "soccer";
+      return `https://streamfree.top/embed/${cat}/${matchId}`;
+    }
+  }
+  return url.replace("embed.st", "streamfree.top").replace("streamed.pk", "streamfree.top");
+};
+
 const MatchDetails = () => {
   const { id } = useParams();
   const [matchDetails, setMatchDetails] = useState(null);
@@ -177,7 +192,7 @@ const MatchDetails = () => {
               <div className="relative aspect-video bg-background rounded-2xl overflow-hidden border border-zinc-800/80/60 shadow-2xl shadow-black/80">
                 {streams.length > 0 ? (
                   <iframe
-                    src={(streams[selectedStreamIndex]?.embedUrl || "").replace("embed.st", "streamfree.top").replace("streamed.pk", "streamfree.top")}
+                    src={cleanEmbedUrl(streams[selectedStreamIndex]?.embedUrl, matchDetails?.category)}
                     allowFullScreen
                     className="w-full h-full border-0"
                     title="Live Match Stream"
