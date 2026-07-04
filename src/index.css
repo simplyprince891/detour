@@ -23,3 +23,24 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Barlow Condensed', sans-serif;
 }
+
+/* TV Remote Focus Support */
+button:focus,
+a:focus,
+[tabindex="0"]:focus {
+  outline: 2px solid #00D4FF !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.8) !important;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
+
+button:focus-visible,
+a:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid #00D4FF !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.8) !important;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
